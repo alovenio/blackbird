@@ -19,7 +19,7 @@ func main() {
 	}
 	logger.LogLevel = logLevel
 	server := new(sfu.Server)
-	handler := new(sfu.MockSessionHandler)
+	handler := sfu.NewWebRtcSessionHandler()
 	if err = server.Start(*address, handler); err != nil {
 		logger.LogFatalF(err)
 	}
